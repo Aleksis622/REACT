@@ -1,5 +1,6 @@
 import Coin from "./Coin";
 import Dice from "./Dice";
+import Flower from "./Flower";
 import "./App.css";
 
 function App() {
@@ -11,8 +12,11 @@ function App() {
       <Dice />
 
       <h2>Coinflip</h2>
-      <Coin />
+      <Coin /> 
+      <h3>Mīl vai nemīl?</h3>
+    <Flower />
     </>
+   
     
     
 

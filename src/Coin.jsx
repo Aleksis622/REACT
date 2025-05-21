@@ -4,24 +4,25 @@ import { useState } from "react";
 import heads from "./assets2/coin/head.png";
 import tails from "./assets2/coin/tails.png";
 
-const CoinImages = [tails, heads,];
+const CoinImages = [tails, heads];
  
 function Coin() {
-    const [CoinValue, setCoinValue] = useState(4);
+    const [CoinValue, setCoinValue] = useState("tails");
    
     function CoinFlip() {
-    const randomNumber = Math.floor(Math.random() * 2) + 1;
-    setCoinValue(randomNumber);
+      const randomNumber = Math.floor(Math.random() * 2);
+    setCoinValue(randomNumber === 0 ? "tails" : "heads");
+    
     }
   
     return (
       <article className ="coin" >
         <h2>Monētas mešana</h2>
         <button onClick={CoinFlip}>Uzmest</button>
-         <p>Jūs uzmetāt <strong>{CoinValue}</strong></p>
+        <p>Jūs uzmetāt <strong>{CoinValue === "heads" ? "Galvu" : "Astes"}</strong></p>
 
          <img
-           src={CoinImages[CoinValue - 1]}
+            src={CoinImages[CoinValue === "heads" ? 1 : 0]} 
            alt={"Monētas vērtība " + CoinValue}
          />
       </article>
