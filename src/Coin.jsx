@@ -1,6 +1,11 @@
 import "./coin.css";
 import { useState } from "react";
 
+import heads from "./assets2/coin/head.png";
+import tails from "./assets2/coin/tails.png";
+
+const CoinImages = [tails, heads,];
+ 
 function Coin() {
     const [CoinValue, setCoinValue] = useState(4);
    
@@ -21,6 +26,8 @@ function Coin() {
          />
       </article>
     );
+   
   }
+  
   
   export default Coin;
